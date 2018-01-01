@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body{
+                background: black;
+            }
+            .chrismas-tree{
+                -webkit-clip-path: url(#chrismasShape);
+                clip-path: url(#chrismasShape);
+            }
+            
+            #chrismasShape{
+                transform: translate(50%,0);
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="chrismas-tree">
+            Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018 Happy New Year 2018
+        </div>
+        
+        <svg>
+            <clipPath id="chrismasShape">
+		      <polygon points="353.763,379.942 279.854,234.57 322.024,250.717 253.857,116.637 276.286,127.997 216.747,0 157.209,127.997 
+                179.64,116.636 111.471,250.717 153.642,234.569 79.731,379.942 200.872,337.52 200.872,433.494 232.624,433.494 232.624,337.518 "/>
+	       </clipPath>
+        </svg>
+        
+        <script>
+            $(function() {
+                 var colors  = [{name:"pink", weight:5}, 
+                               {name:"blue", weight:10},
+                               {name:"red", weight:20},
+                               {name:"yellow", weight:25}, 
+                               {name:"limegreen", weight:35}];
+                
+                var totalWeight = colors.reduce(function (sum, colors) {
+                        return sum + colors.weight;
+                }, 0);
+                
+                var getRandomItem = function(list, totalWeight) {
+                  var random = Math.floor((Math.random() * totalWeight)+1);
+                    
+                    for(let i = 0; i < list.length; i++){
+                        if(random <= list[i].weight){
+                            return list[i];
+                        }
+                    }
+                    return list[list.length-1];
+                }
+                
+                
+                var div = $('.chrismas-tree');
+                var text = div.text();
+                var charlen = text.length;
+                
+                var selected = [];
+                
+                for(var i = 0; i < charlen; i++){
+                    selected[i] = getRandomItem(colors, totalWeight).name;
+                }
+                
+                var chars = text.split('');
+                div.html('');     
+                for(var i = 0; i < charlen; i++) {
+                    var span = $('<span>' + chars[i] + '</span>').css("color", selected[i]);
+                    div.append(span);
+                }
+            });
+        </script>
+    </body>
+</html>
