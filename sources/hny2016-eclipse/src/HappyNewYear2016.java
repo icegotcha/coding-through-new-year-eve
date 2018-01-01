@@ -2,6 +2,14 @@ import java.util.ArrayList;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+/**
+ * 
+ * Make snowfall effect to 
+ * celebrate new year 2016
+ * 
+ * @author Icegotcha Fantasoxy
+ *
+ */
 
 @SuppressWarnings("serial")
 public class HappyNewYear2016 extends JFrame {
