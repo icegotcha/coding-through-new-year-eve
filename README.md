@@ -18,7 +18,7 @@ Random christmas tree
 
 
 ## 2016 - Java
-Let it snow!!
+Let's it snow!!
 
 ![Happy New Year 2016! Let it snow!!](https://raw.githubusercontent.com/icegotcha/coding-through-new-year-eve/master/pics/2016.gif)
 
